@@ -28,7 +28,7 @@ export async function GET(
   if (!res.ok) {
     return NextResponse.error();
   }
-  return NextResponse.json(data.response);
+  return NextResponse.json(data?.response || data);
 }
 
 export async function POST(
@@ -59,5 +59,5 @@ export async function POST(
     return NextResponse.error();
   }
 
-  return NextResponse.json(data.response);
+  return NextResponse.json(data);
 }
